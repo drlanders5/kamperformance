@@ -1,0 +1,25 @@
+/* ==========================================
+   KamPerformance Website
+   Global Styles
+========================================== */
+
+:root {
+    --primary: #1E6BFF;
+    --navy: #0A1020;
+    --white: #F8FAFC;
+    --light-gray: #E5E7EB;
+    --dark-gray: #374151;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: var(--white);
+    color: var(--navy);
+    line-height: 1.6;
+}
