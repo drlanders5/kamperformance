@@ -134,3 +134,32 @@
     line-height: 1.8;
     margin-bottom: 36px;
 }
+
+/* ==========================================
+   Page Hero
+========================================== */
+
+.page-hero {
+    background: var(--navy);
+    color: var(--white);
+    padding: 130px 8%;
+    text-align: center;
+}
+
+.page-hero h1 {
+    max-width: 900px;
+    margin: 0 auto 28px;
+
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: .95;
+    letter-spacing: -0.06em;
+}
+
+.page-hero p:not(.eyebrow) {
+    max-width: 720px;
+    margin: 0 auto;
+
+    color: var(--light-gray);
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
