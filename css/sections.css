@@ -389,3 +389,66 @@
 .back-link:hover {
     transform: translateX(-6px);
 }
+
+/* ==========================================
+   Article Table of Contents
+========================================== */
+
+.article-toc {
+    margin-bottom: 56px;
+
+    padding: 32px 36px;
+
+    background: #F8FAFD;
+
+    border: 1px solid #E8ECF4;
+    border-radius: 20px;
+}
+
+.article-toc ul {
+    list-style: none;
+
+    margin-top: 24px;
+    padding: 0;
+}
+
+.article-toc li + li {
+    margin-top: 16px;
+}
+
+.article-toc a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 600;
+
+    transition:
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.article-toc a::before {
+    content: "";
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    transition:
+        transform var(--transition-fast);
+}
+
+.article-toc a:hover {
+    color: var(--primary);
+    transform: translateX(6px);
+}
+
+.article-toc a:hover::before {
+    transform: scale(1.3);
+}
