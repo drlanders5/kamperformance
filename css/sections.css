@@ -35,7 +35,7 @@
 .evidence-first {
     background: var(--white);
     color: var(--navy);
-    padding: 120px 8%;
+    padding: 135px 8%;
 }
 
 .evidence-first h2 {
@@ -53,7 +53,7 @@
 
 .library-preview {
     background: #F6F8FC;
-    padding: 140px 8%;
+    padding: 150px 8%;
 }
 
 .library-grid {
@@ -65,7 +65,7 @@
 
 .about-preview {
     background: var(--white);
-    padding: 140px 8%;
+    padding: 150px 8%;
 }
 
 .about-content {
