@@ -416,3 +416,63 @@
     letter-spacing: .06em;
     text-transform: uppercase;
 }
+
+/* ==========================================
+   Dynamic Guide Cards
+========================================== */
+
+.guide-list {
+    margin-top: 48px;
+
+    display: grid;
+    gap: 24px;
+}
+
+.guide-card {
+    display: block;
+
+    background: var(--white);
+    border-radius: 20px;
+    padding: 32px;
+
+    text-decoration: none;
+    color: inherit;
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform var(--transition-medium),
+        box-shadow var(--transition-medium);
+}
+
+.guide-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lift);
+}
+
+.guide-card h3 {
+    color: var(--navy);
+    font-size: 1.5rem;
+    margin-bottom: 14px;
+}
+
+.guide-card p {
+    color: var(--dark-gray);
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.guide-card span {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.empty-state {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 32px;
+
+    color: var(--dark-gray);
+
+    box-shadow: var(--shadow-soft);
+}
