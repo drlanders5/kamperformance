@@ -304,3 +304,33 @@ if (
         }
     }
 }
+
+/* ==========================================
+   Dynamic Guide Content
+========================================== */
+
+const guideTitleElement = document.querySelector("[data-guide-title]");
+const guideSummaryElement = document.querySelector("[data-guide-summary]");
+
+if (
+    guideArticle &&
+    typeof guides !== "undefined"
+) {
+    const currentGuideId = guideArticle.dataset.guideId;
+
+    const currentGuide = guides.find(
+        (guide) => guide.id === currentGuideId
+    );
+
+    if (currentGuide) {
+
+        if (guideTitleElement) {
+            guideTitleElement.textContent = currentGuide.title;
+        }
+
+        if (guideSummaryElement) {
+            guideSummaryElement.textContent = currentGuide.summary;
+        }
+
+    }
+}
