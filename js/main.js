@@ -46,3 +46,35 @@ guideCountElements.forEach(element => {
         `${count} ${count === 1 ? "Guide" : "Guides"} Available`;
 
 });
+
+/* ==========================================
+   Dynamic Guide Lists
+========================================== */
+
+const guideLists = document.querySelectorAll(".guide-list");
+
+guideLists.forEach(list => {
+    const category = list.dataset.category;
+
+    const matchingGuides = guides.filter(guide =>
+        guide.category === category &&
+        guide.status === "published"
+    );
+
+    if (matchingGuides.length === 0) {
+        list.innerHTML = `
+            <div class="empty-state">
+                Guides are being added to this category.
+            </div>
+        `;
+        return;
+    }
+
+    list.innerHTML = matchingGuides.map(guide => `
+        <a href="${guide.url}" class="guide-card">
+            <h3>${guide.title}</h3>
+            <p>${guide.summary}</p>
+            <span>${guide.difficulty} • ${guide.readTime} min read →</span>
+        </a>
+    `).join("");
+});
