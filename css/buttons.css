@@ -1,1 +1,15 @@
+.hero-button {
+    margin-top: 36px;
+    display: inline-block;
+    width: fit-content;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+}
 
+.hero-button:hover {
+    opacity: 0.9;
+}
