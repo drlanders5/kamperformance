@@ -272,3 +272,35 @@ if (
             `${currentGuide.category.toUpperCase()} • ${currentGuide.readTime} MIN READ`;
     }
 }
+
+/* ==========================================
+   Dynamic Hero Metadata
+========================================== */
+
+const readTimeElement = document.querySelector("[data-read-time]");
+const updatedDateElement = document.querySelector("[data-updated-date]");
+
+if (
+    guideArticle &&
+    typeof guides !== "undefined"
+) {
+    const currentGuideId = guideArticle.dataset.guideId;
+
+    const currentGuide = guides.find(
+        (guide) => guide.id === currentGuideId
+    );
+
+    if (currentGuide) {
+        if (readTimeElement) {
+            readTimeElement.textContent = `${currentGuide.readTime} min`;
+        }
+
+        if (updatedDateElement) {
+            updatedDateElement.textContent = new Date(currentGuide.updated)
+                .toLocaleDateString("en-US", {
+                    month: "long",
+                    year: "numeric"
+                });
+        }
+    }
+}
