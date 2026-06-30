@@ -138,3 +138,33 @@
 
     pointer-events: none;
 }
+
+/* ==========================================
+   Mission List
+========================================== */
+
+.mission-list {
+    list-style: none;
+    margin-top: 30px;
+    padding: 0;
+}
+
+.mission-list li {
+    position: relative;
+
+    padding-left: 30px;
+    margin-bottom: 16px;
+
+    color: var(--navy);
+    font-weight: 600;
+}
+
+.mission-list li::before {
+    content: "✓";
+
+    position: absolute;
+    left: 0;
+
+    color: var(--primary);
+    font-weight: 700;
+}
