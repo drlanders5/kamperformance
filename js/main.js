@@ -137,6 +137,24 @@ window.addEventListener("scroll", updateReadingProgress);
 window.addEventListener("load", updateReadingProgress);
 
 /* ==========================================
+   Dynamic Article Body
+========================================== */
+
+const articleContentContainer = document.querySelector("#article-content");
+
+if (
+    articleContentContainer &&
+    currentGuide &&
+    typeof getArticleContent === "function"
+) {
+    const currentArticle = getArticleContent(currentGuide.id);
+
+    if (currentArticle) {
+        articleContentContainer.innerHTML = currentArticle.content;
+    }
+}
+
+/* ==========================================
    Automatic Article Table of Contents
 ========================================== */
 
