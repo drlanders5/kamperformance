@@ -160,20 +160,26 @@
 .card-arrow {
     margin-top: auto;
 
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
+    width: 64px;
+    height: 64px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    border-radius: 50%;
+
     background: var(--primary);
     color: var(--white);
 
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+
     text-decoration: none;
+
+    box-shadow:
+        0 10px 26px rgba(30,107,255,.28);
 
     transition:
         transform var(--transition-medium),
@@ -182,10 +188,10 @@
 }
 
 .card-arrow:hover {
-    transform: translateX(6px);
+    transform: translateX(8px) scale(1.08);
 
     box-shadow:
-        0 12px 28px rgba(30,107,255,.35);
+        0 16px 34px rgba(30,107,255,.40);
 }
 
 /* ==========================================
