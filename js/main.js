@@ -148,14 +148,9 @@ const articleContentContainer = document.querySelector("#article-content");
 
 if (
     articleContentContainer &&
-    currentGuide &&
-    typeof getArticleContent === "function"
+    typeof window.articleContent !== "undefined"
 ) {
-    const currentArticle = getArticleContent(currentGuide.id);
-
-    if (currentArticle) {
-        articleContentContainer.innerHTML = currentArticle.content;
-    }
+    articleContentContainer.innerHTML = window.articleContent;
 }
 
 /* ==========================================
