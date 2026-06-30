@@ -503,5 +503,6 @@
 }
 
 .article-toc a.active::before {
-    transform: scale(1.4);
+    background: var(--primary);
+    box-shadow: 0 0 0 5px rgba(30,107,255,.18);
 }
