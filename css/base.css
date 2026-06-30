@@ -4,6 +4,10 @@
     --white: #F8FAFC;
     --light-gray: #E5E7EB;
     --dark-gray: #374151;
+    --transition-fast: .2s ease;
+    --transition-medium: .3s ease;
+    --shadow-soft: 0 18px 45px rgba(10,16,32,.10);
+    --shadow-lift: 0 30px 70px rgba(10,16,32,.16);
 }
 
 * {
