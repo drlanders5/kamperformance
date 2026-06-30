@@ -51,15 +51,23 @@
     background: var(--white);
     border-radius: 22px;
     padding: 42px;
-    box-shadow: var(--shadow-soft);
+
+    min-height: 430px;
+
+    box-shadow:
+        var(--shadow-soft),
+        0 8px 22px rgba(30,107,255,.05);
+
     transition:
-    transform var(--transition-medium),
-    box-shadow var(--transition-medium);
+        transform var(--transition-medium),
+        box-shadow var(--transition-medium);
 }
 
 .library-card:hover {
     transform: translateY(-10px);
-    box-shadow: var(--shadow-lift);
+    box-shadow:
+        var(--shadow-lift),
+        0 14px 34px rgba(30,107,255,.08);
 }
 
 .library-category {
@@ -74,7 +82,7 @@
 
 .library-card h3 {
     font-size: 2rem;
-    margin-bottom: 18px;
+    margin-bottom: 26px;
     color: var(--navy);
 }
 
