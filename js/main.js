@@ -1,3 +1,7 @@
+/* ==========================================
+   Scroll Reveal
+========================================== */
+
 const observer = new IntersectionObserver(
     (entries) => {
         entries.forEach((entry) => {
@@ -17,6 +21,10 @@ document.querySelectorAll(".reveal").forEach((element) => {
     observer.observe(element);
 });
 
+/* ==========================================
+   Sticky Header
+========================================== */
+
 const siteHeader = document.querySelector(".site-header");
 
 const updateHeaderOnScroll = () => {
@@ -31,6 +39,24 @@ const updateHeaderOnScroll = () => {
 
 window.addEventListener("scroll", updateHeaderOnScroll);
 window.addEventListener("load", updateHeaderOnScroll);
+
+/* ==========================================
+   Current Guide Lookup
+========================================== */
+
+const guideArticle = document.querySelector(".guide-article");
+
+const currentGuideId = guideArticle?.dataset.guideId;
+
+const currentGuide =
+    typeof guides !== "undefined" && currentGuideId
+        ? guides.find((guide) => guide.id === currentGuideId)
+        : null;
+
+const currentGuideIndex =
+    typeof guides !== "undefined" && currentGuideId
+        ? guides.findIndex((guide) => guide.id === currentGuideId)
+        : -1;
 
 /* ==========================================
    Guide Counter
@@ -132,39 +158,6 @@ if (tocList && articleHeadings.length) {
 }
 
 /* ==========================================
-   Dynamic Previous / Next Guide Navigation
-========================================== */
-
-const guideArticle = document.querySelector(".guide-article");
-
-if (guideArticle && typeof guides !== "undefined") {
-    const currentGuideId = guideArticle.dataset.guideId;
-    const currentGuideIndex = guides.findIndex((guide) => guide.id === currentGuideId);
-
-    if (currentGuideIndex !== -1) {
-        const previousGuide = guides[currentGuideIndex - 1];
-        const nextGuide = guides[currentGuideIndex + 1];
-
-        const previousLink = document.querySelector(".guide-nav-prev");
-        const nextLink = document.querySelector(".guide-nav-next");
-
-        if (previousLink && previousGuide) {
-            previousLink.href = previousGuide.url;
-            previousLink.textContent = `← ${previousGuide.title}`;
-        }
-
-        if (nextLink && nextGuide) {
-            nextLink.href = nextGuide.url;
-            nextLink.textContent = `${nextGuide.title} →`;
-        }
-
-        if (nextLink && !nextGuide) {
-            nextLink.style.display = "none";
-        }
-    }
-}
-
-/* ==========================================
    Active Article Table of Contents
 ========================================== */
 
@@ -196,57 +189,65 @@ window.addEventListener("scroll", updateActiveTocLink);
 window.addEventListener("load", updateActiveTocLink);
 
 /* ==========================================
+   Dynamic Previous / Next Guide Navigation
+========================================== */
+
+if (currentGuide && currentGuideIndex !== -1 && typeof guides !== "undefined") {
+    const previousGuide = guides[currentGuideIndex - 1];
+    const nextGuide = guides[currentGuideIndex + 1];
+
+    const previousLink = document.querySelector(".guide-nav-prev");
+    const nextLink = document.querySelector(".guide-nav-next");
+
+    if (previousLink && previousGuide) {
+        previousLink.href = previousGuide.url;
+        previousLink.textContent = `← ${previousGuide.title}`;
+    }
+
+    if (nextLink && nextGuide) {
+        nextLink.href = nextGuide.url;
+        nextLink.textContent = `${nextGuide.title} →`;
+    }
+
+    if (nextLink && !nextGuide) {
+        nextLink.style.display = "none";
+    }
+}
+
+/* ==========================================
    Automatic Related Guides
 ========================================== */
 
 const relatedGuideContainer = document.querySelector(".related-guide-list");
 
-if (
-    relatedGuideContainer &&
-    guideArticle &&
-    typeof guides !== "undefined"
-) {
-    const currentGuideId = guideArticle.dataset.guideId;
+if (relatedGuideContainer && currentGuide && typeof guides !== "undefined") {
+    const relatedGuides = guides
+        .filter((guide) =>
+            guide.id !== currentGuide.id &&
+            guide.category === currentGuide.category &&
+            guide.status === "published"
+        )
+        .slice(0, 3);
 
-    const currentGuide = guides.find(
-        guide => guide.id === currentGuideId
-    );
+    if (relatedGuides.length === 0) {
+        relatedGuideContainer.innerHTML = `
+            <p>No related guides yet.</p>
+        `;
+    } else {
+        relatedGuideContainer.innerHTML = relatedGuides.map((guide) => `
+            <a href="${guide.url}" class="guide-card">
+                <p class="guide-topic">● ${guide.topic}</p>
 
-    if (currentGuide) {
+                <h3>${guide.title}</h3>
 
-        const relatedGuides = guides
-            .filter(guide =>
-                guide.id !== currentGuide.id &&
-                guide.category === currentGuide.category &&
-                guide.status === "published"
-            )
-            .slice(0, 3);
+                <p>${guide.summary}</p>
 
-        if (relatedGuides.length === 0) {
-
-            relatedGuideContainer.innerHTML = `
-                <p>No related guides yet.</p>
-            `;
-
-        } else {
-
-            relatedGuideContainer.innerHTML = relatedGuides.map(guide => `
-                <a href="${guide.url}" class="guide-card">
-                    <p class="guide-topic">● ${guide.topic}</p>
-
-                    <h3>${guide.title}</h3>
-
-                    <p>${guide.summary}</p>
-
-                    <div class="guide-meta">
-                        <span>${guide.readTime} min read</span>
-                        <strong>Read Guide →</strong>
-                    </div>
-                </a>
-            `).join("");
-
-        }
-
+                <div class="guide-meta">
+                    <span>${guide.readTime} min read</span>
+                    <strong>Read Guide →</strong>
+                </div>
+            </a>
+        `).join("");
     }
 }
 
@@ -255,82 +256,34 @@ if (
 ========================================== */
 
 const guideMetaElement = document.querySelector("[data-guide-meta]");
-
-if (
-    guideMetaElement &&
-    guideArticle &&
-    typeof guides !== "undefined"
-) {
-    const currentGuideId = guideArticle.dataset.guideId;
-
-    const currentGuide = guides.find(
-        (guide) => guide.id === currentGuideId
-    );
-
-    if (currentGuide) {
-        guideMetaElement.textContent =
-            `${currentGuide.category.toUpperCase()} • ${currentGuide.readTime} MIN READ`;
-    }
-}
-
-/* ==========================================
-   Dynamic Hero Metadata
-========================================== */
-
 const readTimeElement = document.querySelector("[data-read-time]");
 const updatedDateElement = document.querySelector("[data-updated-date]");
-
-if (
-    guideArticle &&
-    typeof guides !== "undefined"
-) {
-    const currentGuideId = guideArticle.dataset.guideId;
-
-    const currentGuide = guides.find(
-        (guide) => guide.id === currentGuideId
-    );
-
-    if (currentGuide) {
-        if (readTimeElement) {
-            readTimeElement.textContent = `${currentGuide.readTime} min`;
-        }
-
-        if (updatedDateElement) {
-            updatedDateElement.textContent = new Date(currentGuide.updated)
-                .toLocaleDateString("en-US", {
-                    month: "long",
-                    year: "numeric"
-                });
-        }
-    }
-}
-
-/* ==========================================
-   Dynamic Guide Content
-========================================== */
-
 const guideTitleElement = document.querySelector("[data-guide-title]");
 const guideSummaryElement = document.querySelector("[data-guide-summary]");
 
-if (
-    guideArticle &&
-    typeof guides !== "undefined"
-) {
-    const currentGuideId = guideArticle.dataset.guideId;
+if (currentGuide) {
+    if (guideMetaElement) {
+        guideMetaElement.textContent =
+            `${currentGuide.category.toUpperCase()} • ${currentGuide.readTime} MIN READ`;
+    }
 
-    const currentGuide = guides.find(
-        (guide) => guide.id === currentGuideId
-    );
+    if (readTimeElement) {
+        readTimeElement.textContent = `${currentGuide.readTime} min`;
+    }
 
-    if (currentGuide) {
+    if (updatedDateElement) {
+        updatedDateElement.textContent = new Date(currentGuide.updated)
+            .toLocaleDateString("en-US", {
+                month: "long",
+                year: "numeric"
+            });
+    }
 
-        if (guideTitleElement) {
-            guideTitleElement.textContent = currentGuide.title;
-        }
+    if (guideTitleElement) {
+        guideTitleElement.textContent = currentGuide.title;
+    }
 
-        if (guideSummaryElement) {
-            guideSummaryElement.textContent = currentGuide.summary;
-        }
-
+    if (guideSummaryElement) {
+        guideSummaryElement.textContent = currentGuide.summary;
     }
 }
