@@ -23,3 +23,98 @@ body {
     color: var(--navy);
     line-height: 1.6;
 }
+
+/* ==========================================
+   Header + Navigation
+========================================== */
+
+.site-header {
+    background-color: var(--navy);
+    padding: 24px 8%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brand {
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--light-gray);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* ==========================================
+   Hero Section
+========================================== */
+
+.hero {
+    min-height: 85vh;
+    background: var(--navy);
+    color: var(--white);
+    padding: 120px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+    max-width: 900px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero-text {
+    margin-top: 28px;
+    max-width: 700px;
+    font-size: 1.25rem;
+    color: var(--light-gray);
+}
+
+.hero-button {
+    margin-top: 36px;
+    display: inline-block;
+    width: fit-content;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.hero-button:hover {
+    opacity: 0.9;
+}
+
+.hero-note {
+    margin-top: 24px;
+    color: var(--light-gray);
+    font-size: 0.95rem;
+}
