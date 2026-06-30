@@ -13,9 +13,11 @@
 
 .hero-button {
     transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        opacity .25s ease;
+        transform var(--transition-medium),
+        box-shadow var(--transition-medium),
+        opacity var(--transition-medium),
+        background-color var(--transition-medium),
+        color var(--transition-medium);
 }
 
 .hero-button:hover {
