@@ -29,3 +29,20 @@ const updateHeaderOnScroll = () => {
 
 window.addEventListener("scroll", updateHeaderOnScroll);
 window.addEventListener("load", updateHeaderOnScroll);
+
+/* ==========================================
+   Guide Counter
+========================================== */
+
+const guideCountElements = document.querySelectorAll(".guide-count");
+
+guideCountElements.forEach(element => {
+
+    const category = element.dataset.category;
+
+    const count = getGuideCount(category);
+
+    element.textContent =
+        `${count} ${count === 1 ? "Guide" : "Guides"} Available`;
+
+});
