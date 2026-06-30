@@ -119,6 +119,38 @@ body {
     font-size: 0.95rem;
 }
 
-body {
-    background: red;
+/* ==========================================
+   Evidence First Section
+========================================== */
+
+.evidence-first {
+    background: var(--white);
+    color: var(--navy);
+    padding: 120px 8%;
+}
+
+.section-header {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.eyebrow {
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.evidence-first h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 28px;
+}
+
+.section-intro {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    line-height: 1.8;
 }
