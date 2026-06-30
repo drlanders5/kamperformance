@@ -288,3 +288,115 @@
     color: var(--primary);
     font-weight: 700;
 }
+
+/* ==========================================
+   Knowledge Cards
+========================================== */
+
+.knowledge-card {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--white);
+    border-radius: 24px;
+
+    padding: 48px;
+
+    min-height: 360px;
+
+    text-decoration: none;
+    color: inherit;
+
+    box-shadow:
+        var(--shadow-soft),
+        0 14px 34px rgba(30,107,255,.08);
+
+    transition:
+        transform var(--transition-medium),
+        box-shadow var(--transition-medium);
+}
+
+.knowledge-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        var(--shadow-lift),
+        0 22px 48px rgba(30,107,255,.14);
+}
+
+.knowledge-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    right: -30px;
+    bottom: -30px;
+
+    background-image:
+        radial-gradient(var(--primary) 1.5px, transparent 1.5px);
+
+    background-size: 14px 14px;
+
+    opacity: .28;
+
+    mask-image:
+        radial-gradient(circle at bottom right,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,.9) 35%,
+        rgba(0,0,0,.5) 60%,
+        transparent 88%);
+
+    -webkit-mask-image:
+        radial-gradient(circle at bottom right,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,.9) 35%,
+        rgba(0,0,0,.5) 60%,
+        transparent 88%);
+
+    transition:
+        opacity var(--transition-medium),
+        transform var(--transition-medium);
+
+    pointer-events: none;
+}
+
+.knowledge-card:hover::before {
+    opacity: .45;
+    transform: scale(1.08);
+}
+
+.knowledge-card h2 {
+    font-size: 2rem;
+    line-height: 1.1;
+
+    margin-bottom: 24px;
+
+    color: var(--navy);
+}
+
+.knowledge-card p:not(.library-category) {
+    color: var(--dark-gray);
+    line-height: 1.9;
+}
+
+.knowledge-card span {
+    margin-top: auto;
+
+    color: var(--primary);
+
+    font-weight: 700;
+    font-size: 1rem;
+
+    transition:
+        transform var(--transition-medium);
+}
+
+.knowledge-card:hover span {
+    transform: translateX(8px);
+}
