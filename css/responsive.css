@@ -24,3 +24,51 @@
         max-width: 100%;
     }
 }
+
+@media (max-width: 600px) {
+    .site-header {
+        padding: 22px 6%;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 90px 6%;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.7rem, 15vw, 4.2rem);
+        line-height: 1;
+    }
+
+    .hero-text {
+        font-size: 1.08rem;
+    }
+
+    .evidence-first,
+    .library-preview,
+    .about-preview,
+    .homepage-cta {
+        padding: 95px 6%;
+    }
+
+    .evidence-cards,
+    .library-grid {
+        margin-top: 70px;
+        gap: 28px;
+    }
+
+    .evidence-card,
+.library-card,
+.highlight-card {
+    padding: 34px 28px;
+}
+
+.homepage-cta h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+}
