@@ -257,6 +257,36 @@
     text-align: center;
 }
 
+.breadcrumbs {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-bottom: 28px;
+
+    color: rgba(255,255,255,.60);
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.breadcrumbs a {
+    color: rgba(255,255,255,.75);
+    text-decoration: none;
+
+    transition:
+        color var(--transition-fast);
+}
+
+.breadcrumbs a:hover {
+    color: var(--white);
+}
+
+.breadcrumbs span:last-child {
+    color: var(--white);
+    font-weight: 600;
+}
+
 .guide-hero h1 {
     max-width: 950px;
     margin: 0 auto 28px;
