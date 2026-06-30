@@ -86,4 +86,4 @@ if (guideLists.length && typeof guides !== "undefined") {
         </div>
     </a>
 `).join("");
-}
+});
