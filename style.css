@@ -170,11 +170,11 @@ body {
     position: relative;
     overflow: hidden;
 
-    background: linear-gradient(
-        180deg,
-        #FFFFFF 0%,
-        #FAFBFD 100%
-    );
+   background: linear-gradient(
+    180deg,
+    #FFFFFF 0%,
+    #F4F8FD 100%
+);
 
     border: 1px solid #E8ECF4;
     border-top: 4px solid var(--primary);
@@ -192,7 +192,7 @@ body {
 }
 
 .evidence-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-12px) scale(1.015);
 
     box-shadow:
         0 28px 65px rgba(10,16,32,.16),
