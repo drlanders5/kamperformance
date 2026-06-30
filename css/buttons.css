@@ -11,6 +11,17 @@
     text-decoration: none;
 }
 
+.hero-button {
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        opacity .25s ease;
+}
+
 .hero-button:hover {
-    opacity: 0.9;
+    transform: translateY(-2px);
+    opacity: .95;
+
+    box-shadow:
+        0 10px 24px rgba(30,107,255,.30);
 }
