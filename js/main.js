@@ -130,3 +130,36 @@ if (tocList && articleHeadings.length) {
         `;
     });
 }
+
+/* ==========================================
+   Dynamic Previous / Next Guide Navigation
+========================================== */
+
+const guideArticle = document.querySelector(".guide-article");
+
+if (guideArticle && typeof guides !== "undefined") {
+    const currentGuideId = guideArticle.dataset.guideId;
+    const currentGuideIndex = guides.findIndex((guide) => guide.id === currentGuideId);
+
+    if (currentGuideIndex !== -1) {
+        const previousGuide = guides[currentGuideIndex - 1];
+        const nextGuide = guides[currentGuideIndex + 1];
+
+        const previousLink = document.querySelector(".guide-nav-prev");
+        const nextLink = document.querySelector(".guide-nav-next");
+
+        if (previousLink && previousGuide) {
+            previousLink.href = previousGuide.url;
+            previousLink.textContent = `← ${previousGuide.title}`;
+        }
+
+        if (nextLink && nextGuide) {
+            nextLink.href = nextGuide.url;
+            nextLink.textContent = `${nextGuide.title} →`;
+        }
+
+        if (nextLink && !nextGuide) {
+            nextLink.style.display = "none";
+        }
+    }
+}
