@@ -1,6 +1,17 @@
 .site-header {
-    background-color: var(--navy);
-    padding: 24px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background-color: rgba(10, 16, 32, 0.92);
+    backdrop-filter: blur(16px);
+
+    padding: 22px 8%;
+
+    transition:
+        background-color var(--transition-medium),
+        box-shadow var(--transition-medium),
+        padding var(--transition-medium);
 }
 
 .navbar {
