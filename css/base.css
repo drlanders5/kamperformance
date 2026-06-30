@@ -49,10 +49,10 @@ body {
 
 .reveal {
     opacity: 0;
-    transform: translateY(36px);
+    transform: translateY(48px);
     transition:
-        opacity .7s ease,
-        transform .7s ease;
+        opacity 1s ease,
+        transform 1s ease;
 }
 
 .reveal.active {
@@ -61,13 +61,13 @@ body {
 }
 
 .evidence-cards .reveal:nth-child(1) {
-    transition-delay: .1s;
+    transition-delay: .15s;
 }
 
 .evidence-cards .reveal:nth-child(2) {
-    transition-delay: .22s;
+    transition-delay: .4s;
 }
 
 .evidence-cards .reveal:nth-child(3) {
-    transition-delay: .34s;
+    transition-delay: .65s;
 }
