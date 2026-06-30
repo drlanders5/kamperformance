@@ -165,19 +165,38 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
 }
+
 .evidence-card {
-    background: linear-gradient(180deg, #ffffff 0%, #F8FAFC 100%);
-    border: 1px solid var(--light-gray);
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        180deg,
+        #FFFFFF 0%,
+        #FAFBFD 100%
+    );
+
+    border: 1px solid #E8ECF4;
     border-top: 4px solid var(--primary);
-    border-radius: 18px;
+    border-radius: 20px;
+
     padding: 48px 42px;
-    box-shadow: 0 24px 55px rgba(10, 16, 32, 0.16);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    box-shadow:
+        0 16px 40px rgba(10,16,32,.10),
+        0 8px 20px rgba(30,107,255,.05);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
 .evidence-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 32px 70px rgba(10, 16, 32, 0.22);
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 28px 65px rgba(10,16,32,.16),
+        0 10px 30px rgba(30,107,255,.10);
 }
 
 .evidence-card h3 {
@@ -188,4 +207,23 @@ body {
 .evidence-card p {
     color: var(--dark-gray);
     line-height: 1.7;
+}
+
+.evidence-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -90px;
+    right: -90px;
+
+    background: radial-gradient(
+        rgba(30,107,255,.10),
+        transparent 70%
+    );
+
+    pointer-events: none;
 }
