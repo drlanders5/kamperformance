@@ -249,3 +249,26 @@ if (
 
     }
 }
+
+/* ==========================================
+   Dynamic Article Metadata
+========================================== */
+
+const guideMetaElement = document.querySelector("[data-guide-meta]");
+
+if (
+    guideMetaElement &&
+    guideArticle &&
+    typeof guides !== "undefined"
+) {
+    const currentGuideId = guideArticle.dataset.guideId;
+
+    const currentGuide = guides.find(
+        (guide) => guide.id === currentGuideId
+    );
+
+    if (currentGuide) {
+        guideMetaElement.textContent =
+            `${currentGuide.category.toUpperCase()} • ${currentGuide.readTime} MIN READ`;
+    }
+}
