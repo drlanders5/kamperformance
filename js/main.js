@@ -163,3 +163,34 @@ if (guideArticle && typeof guides !== "undefined") {
         }
     }
 }
+
+/* ==========================================
+   Active Article Table of Contents
+========================================== */
+
+const tocLinks = document.querySelectorAll(".article-toc a");
+
+const updateActiveTocLink = () => {
+    if (!tocLinks.length || !articleHeadings.length) return;
+
+    let activeHeading = articleHeadings[0];
+
+    articleHeadings.forEach((heading) => {
+        const headingTop = heading.getBoundingClientRect().top;
+
+        if (headingTop <= 160) {
+            activeHeading = heading;
+        }
+    });
+
+    tocLinks.forEach((link) => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === `#${activeHeading.id}`) {
+            link.classList.add("active");
+        }
+    });
+};
+
+window.addEventListener("scroll", updateActiveTocLink);
+window.addEventListener("load", updateActiveTocLink);
