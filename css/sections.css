@@ -89,3 +89,37 @@
     line-height: 1.9;
     margin-bottom: 28px;
 }
+
+/* ==========================================
+   Homepage CTA
+========================================== */
+
+.homepage-cta {
+    background: var(--navy);
+    color: var(--white);
+    padding: 140px 8%;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.homepage-cta .eyebrow {
+    color: var(--primary);
+}
+
+.homepage-cta h2 {
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+    margin-bottom: 28px;
+}
+
+.homepage-cta p {
+    color: var(--light-gray);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 36px;
+}
