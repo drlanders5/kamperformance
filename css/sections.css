@@ -383,20 +383,46 @@
     color: var(--navy);
 }
 
-.back-link {
-    display: inline-block;
-    margin-top: 20px;
+/* ==========================================
+   Guide Navigation
+========================================== */
 
-    color: var(--primary);
-    font-weight: 700;
+.guide-navigation {
+    margin-top: 80px;
+    padding-top: 40px;
+
+    border-top: 1px solid #E8ECF4;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.guide-nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--navy);
     text-decoration: none;
+    font-weight: 700;
 
     transition:
+        color var(--transition-fast),
         transform var(--transition-medium);
 }
 
-.back-link:hover {
+.guide-nav-link:hover {
+    color: var(--primary);
+}
+
+.guide-nav-link:first-child:hover {
     transform: translateX(-6px);
+}
+
+.guide-nav-next:hover {
+    transform: translateX(6px);
 }
 
 /* ==========================================
