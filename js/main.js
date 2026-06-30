@@ -5,7 +5,7 @@ const revealOnScroll = () => {
         const elementTop = element.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
 
-        if (elementTop < windowHeight - 300) {
+        if (elementTop < windowHeight - 250) {
             element.classList.add("active");
         }
     });
