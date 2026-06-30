@@ -496,3 +496,12 @@
 .article-toc a:hover::before {
     transform: scale(1.3);
 }
+
+.article-toc a.active {
+    color: var(--primary);
+    transform: translateX(6px);
+}
+
+.article-toc a.active::before {
+    transform: scale(1.4);
+}
