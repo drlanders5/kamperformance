@@ -42,7 +42,7 @@
     }
 
     .hero h1 {
-        font-size: clamp(2.7rem, 15vw, 4.2rem);
+        font-size: clamp(2.4rem, 13vw, 3.6rem);
         line-height: 1;
     }
 
@@ -64,13 +64,20 @@
     }
 
     .evidence-card,
-.library-card,
-.highlight-card {
-    padding: 34px 28px;
-}
+    .library-card,
+    .highlight-card {
+        padding: 34px 28px;
+    }
 
-.homepage-cta h2 {
-    font-size: clamp(2rem, 10vw, 3rem);
-}
-    
+    .homepage-cta h2 {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .about-text h2 {
+        font-size: clamp(2.1rem, 11vw, 3rem);
+    }
+
+    .about-content {
+        gap: 60px;
+    }
 }
