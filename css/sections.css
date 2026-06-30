@@ -281,7 +281,6 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     gap: 30px;
 
     padding: 18px 28px;
@@ -301,18 +300,15 @@
 
 .meta-label {
     color: rgba(255,255,255,.65);
-
     font-size: .72rem;
     font-weight: 700;
     letter-spacing: .18em;
     text-transform: uppercase;
-
     margin-bottom: 6px;
 }
 
 .meta-item strong {
     color: var(--white);
-
     font-size: 1rem;
     font-weight: 600;
 }
@@ -320,7 +316,6 @@
 .meta-divider {
     width: 1px;
     height: 36px;
-
     background: rgba(255,255,255,.12);
 }
 
@@ -329,9 +324,23 @@
     padding: 120px 8%;
 }
 
+.article-layout {
+    max-width: 1180px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.article-sidebar {
+    position: sticky;
+    top: 120px;
+}
+
 .article-content {
     max-width: 820px;
-    margin: 0 auto;
 
     background: var(--white);
     border-radius: 24px;
@@ -395,19 +404,18 @@
 ========================================== */
 
 .article-toc {
-    margin-bottom: 56px;
+    padding: 32px 28px;
 
-    padding: 32px 36px;
-
-    background: #F8FAFD;
+    background: var(--white);
 
     border: 1px solid #E8ECF4;
     border-radius: 20px;
+
+    box-shadow: var(--shadow-soft);
 }
 
 .article-toc ul {
     list-style: none;
-
     margin-top: 24px;
     padding: 0;
 }
