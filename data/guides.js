@@ -4,6 +4,35 @@
 
 const guides = [
 
+   {
+       id: "movement-education-foundations",
+       title: "Movement Education Foundations",
+       category: "foundations",
+       topic: "Movement Science",
+
+       summary:
+        "Learn the core ideas behind movement, pain, recovery, and why understanding comes before intervention.",
+
+       difficulty: "Beginner",
+       readTime: 6,
+
+       featured: true,
+       status: "published",
+
+       tags: [
+        "movement",
+        "education",
+        "foundations"
+       ],
+
+       author: "KamPerformance",
+
+       published: "2026-01-01",
+       updated: "2026-01-01",
+
+       url: "#"
+},
+   
     {
         id: "understanding-pain",
         title: "Understanding Pain",
