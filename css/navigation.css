@@ -25,7 +25,7 @@
 .brand {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 10px;
 
     color: var(--white);
     font-size: 1.25rem;
@@ -40,8 +40,8 @@
 }
 
 .brand-logo {
-    width: 48px;
-    height: 48px;
+    width: 54px;
+    height: 54px;
     object-fit: contain;
 
     transition: transform var(--transition-medium);
