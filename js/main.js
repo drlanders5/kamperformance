@@ -115,7 +115,7 @@ window.addEventListener("load", updateReadingProgress);
 ========================================== */
 
 const tocList = document.querySelector("#article-toc-list");
-const articleHeadings = document.querySelectorAll(".article-content h2");
+const articleHeadings = document.querySelectorAll(".article-section");
 
 if (tocList && articleHeadings.length) {
     articleHeadings.forEach((heading, index) => {
