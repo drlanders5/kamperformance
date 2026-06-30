@@ -537,3 +537,31 @@
     background: var(--primary);
     box-shadow: 0 0 0 5px rgba(30,107,255,.18);
 }
+
+/* ==========================================
+   Related Guides
+========================================== */
+
+.related-guides {
+    margin-top: 90px;
+    padding-top: 54px;
+
+    border-top: 1px solid #E8ECF4;
+}
+
+.related-guides h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 34px;
+    color: var(--navy);
+}
+
+.related-guide-list {
+    display: grid;
+    gap: 24px;
+}
+
+.related-guide-list > p {
+    color: var(--dark-gray);
+    line-height: 1.8;
+}
