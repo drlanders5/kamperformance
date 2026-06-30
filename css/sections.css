@@ -1,1 +1,349 @@
+/* ==========================================
+   KamPerformance Website
+   Global Styles
+========================================== */
 
+:root {
+    --primary: #1E6BFF;
+    --navy: #0A1020;
+    --white: #F8FAFC;
+    --light-gray: #E5E7EB;
+    --dark-gray: #374151;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: var(--white);
+    color: var(--navy);
+    line-height: 1.6;
+}
+
+/* ==========================================
+   Header + Navigation
+========================================== */
+
+.site-header {
+    background-color: var(--navy);
+    padding: 24px 8%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brand {
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--light-gray);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* ==========================================
+   Hero Section
+========================================== */
+
+.hero {
+    min-height: 68vh;
+    background: var(--navy);
+    color: var(--white);
+    padding: 120px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 6.25rem);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+    max-width: 900px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero-text {
+    margin-top: 28px;
+    max-width: 700px;
+    font-size: 1.25rem;
+    color: var(--light-gray);
+}
+
+.hero-button {
+    margin-top: 36px;
+    display: inline-block;
+    width: fit-content;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.hero-button:hover {
+    opacity: 0.9;
+}
+
+.hero-note {
+    margin-top: 24px;
+    color: var(--light-gray);
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   Evidence First Section
+========================================== */
+
+.evidence-first {
+    background: var(--white);
+    color: var(--navy);
+    padding: 120px 8%;
+}
+
+.section-header {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.eyebrow {
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.evidence-first h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 28px;
+}
+
+.section-intro {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    line-height: 1.8;
+}
+
+/* ==========================================
+   Evidence Cards
+========================================== */
+
+.evidence-cards {
+    margin-top: 90px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.evidence-card {
+    position: relative;
+    overflow: hidden;
+
+   background: linear-gradient(
+    180deg,
+    #FFFFFF 0%,
+    #F4F8FD 100%
+);
+
+    border: 1px solid #E8ECF4;
+    border-top: 4px solid var(--primary);
+    border-radius: 20px;
+
+    padding: 48px 42px;
+
+    box-shadow:
+        0 16px 40px rgba(10,16,32,.10),
+        0 8px 20px rgba(30,107,255,.05);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.evidence-card:hover {
+    transform: translateY(-12px) scale(1.015);
+
+    box-shadow:
+        0 28px 65px rgba(10,16,32,.16),
+        0 10px 30px rgba(30,107,255,.10);
+}
+
+.evidence-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 22px;
+}
+
+.evidence-card p {
+    color: var(--dark-gray);
+    line-height: 1.7;
+}
+
+.evidence-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -90px;
+    right: -90px;
+
+    background: radial-gradient(
+        rgba(30,107,255,.10),
+        transparent 70%
+    );
+
+    pointer-events: none;
+}
+
+/* ==========================================
+   Movement Library Preview
+========================================== */
+
+.library-preview {
+    background: #F6F8FC;
+    padding: 140px 8%;
+}
+
+.library-grid {
+    margin-top: 90px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.library-card {
+    position: relative;
+    overflow: hidden;
+
+    background: var(--white);
+
+    border-radius: 22px;
+    padding: 42px;
+
+    box-shadow:
+        0 18px 45px rgba(10,16,32,.10),
+        0 8px 18px rgba(30,107,255,.05);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.library-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 30px 70px rgba(10,16,32,.16),
+        0 12px 28px rgba(30,107,255,.10);
+}
+
+.library-category {
+    display: inline-block;
+
+    color: var(--primary);
+
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
+}
+
+.library-card h3 {
+    font-size: 2rem;
+    margin-bottom: 18px;
+    color: var(--navy);
+}
+
+.library-card p:last-child {
+    color: var(--dark-gray);
+    line-height: 1.8;
+}
+
+/* ==========================================
+   About Preview
+========================================== */
+
+.about-preview {
+    background: var(--white);
+    padding: 140px 8%;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 32px;
+}
+
+.about-text p {
+    color: var(--dark-gray);
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 28px;
+}
+
+.highlight-card {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FD 100%);
+    border-top: 5px solid var(--primary);
+    border-radius: 22px;
+    padding: 48px;
+
+    box-shadow:
+        0 18px 45px rgba(10,16,32,.10),
+        0 8px 18px rgba(30,107,255,.05);
+}
+
+.highlight-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.highlight-card p {
+    color: var(--dark-gray);
+    line-height: 1.8;
+}
