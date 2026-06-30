@@ -90,3 +90,8 @@ body {
 
     transition: width .1s linear;
 }
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+}
