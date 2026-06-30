@@ -1,1 +1,103 @@
+.evidence-card,
+.library-card {
+    position: relative;
+    overflow: hidden;
+}
 
+.evidence-card {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FD 100%);
+    border: 1px solid #E8ECF4;
+    border-top: 4px solid var(--primary);
+    border-radius: 20px;
+    padding: 48px 42px;
+    box-shadow:
+        0 16px 40px rgba(10,16,32,.10),
+        0 8px 20px rgba(30,107,255,.05);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.evidence-card:hover {
+    transform: translateY(-12px) scale(1.015);
+    box-shadow:
+        0 28px 65px rgba(10,16,32,.16),
+        0 10px 30px rgba(30,107,255,.10);
+}
+
+.evidence-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 22px;
+}
+
+.evidence-card p {
+    color: var(--dark-gray);
+    line-height: 1.7;
+}
+
+.evidence-card::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: -90px;
+    right: -90px;
+    background: radial-gradient(rgba(30,107,255,.10), transparent 70%);
+    pointer-events: none;
+}
+
+.library-card {
+    background: var(--white);
+    border-radius: 22px;
+    padding: 42px;
+    box-shadow:
+        0 18px 45px rgba(10,16,32,.10),
+        0 8px 18px rgba(30,107,255,.05);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.library-card:hover {
+    transform: translateY(-10px);
+    box-shadow:
+        0 30px 70px rgba(10,16,32,.16),
+        0 12px 28px rgba(30,107,255,.10);
+}
+
+.library-category {
+    display: inline-block;
+    color: var(--primary);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.library-card h3 {
+    font-size: 2rem;
+    margin-bottom: 18px;
+    color: var(--navy);
+}
+
+.library-card p:last-child {
+    color: var(--dark-gray);
+    line-height: 1.8;
+}
+
+.highlight-card {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FD 100%);
+    border-top: 5px solid var(--primary);
+    border-radius: 22px;
+    padding: 48px;
+    box-shadow:
+        0 18px 45px rgba(10,16,32,.10),
+        0 8px 18px rgba(30,107,255,.05);
+}
+
+.highlight-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.highlight-card p {
+    color: var(--dark-gray);
+    line-height: 1.8;
+}
