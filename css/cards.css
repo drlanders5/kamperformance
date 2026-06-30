@@ -17,7 +17,10 @@
     box-shadow:
         0 16px 40px rgba(10,16,32,.10),
         0 8px 20px rgba(30,107,255,.05);
-    transition: transform .3s ease, box-shadow .3s ease;
+    transition:
+    transform var(--transition-medium),
+    box-shadow var(--transition-medium),
+    border-color var(--transition-medium);
 }
 
 .evidence-card:hover {
@@ -55,7 +58,9 @@
     box-shadow:
         0 18px 45px rgba(10,16,32,.10),
         0 8px 18px rgba(30,107,255,.05);
-    transition: transform .3s ease, box-shadow .3s ease;
+    transition:
+    transform var(--transition-medium),
+    box-shadow var(--transition-medium);
 }
 
 .library-card:hover {
@@ -97,6 +102,9 @@
     box-shadow:
         0 18px 45px rgba(10,16,32,.10),
         0 8px 18px rgba(30,107,255,.05);
+    transition:
+    transform var(--transition-medium),
+    box-shadow var(--transition-medium);
 }
 
 .highlight-label {
