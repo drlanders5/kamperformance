@@ -102,3 +102,14 @@
     color: #8B94A7;
     font-size: .9rem;
 }
+
+/* ==========================================
+   Sticky Header Scrolled State
+========================================== */
+
+.site-header.scrolled {
+    padding: 14px 8%;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.18);
+}
