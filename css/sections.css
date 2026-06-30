@@ -571,7 +571,10 @@
 ========================================== */
 
 .sidebar-mini-meta {
-    margin-bottom: 18px;
+    width: calc(100% - 40px);
+    margin: 0 auto 18px;
+
+    text-align: center;
 
     color: var(--primary);
 
