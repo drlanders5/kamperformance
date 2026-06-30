@@ -109,7 +109,7 @@
 }
 
 .highlight-card h3 {
-    font-size: 1.6rem;
+    font-size: 1.55rem;
     line-height: 1.25;
     margin-bottom: 18px;
     color: var(--navy);
@@ -117,7 +117,7 @@
 
 .highlight-card p {
     color: var(--dark-gray);
-    line-height: 1.8;
+    line-height: 2;
 }
 
 .highlight-card::before {
