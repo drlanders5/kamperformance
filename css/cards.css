@@ -85,17 +85,32 @@
     content: "";
 
     position: absolute;
-    top: 22px;
-    right: 22px;
 
-    width: 80px;
-    height: 80px;
+    width: 130px;
+    height: 130px;
+
+    right: -18px;
+    bottom: -18px;
 
     background-image:
-        radial-gradient(var(--primary) 1.4px, transparent 1.4px);
+        radial-gradient(var(--primary) 1.5px, transparent 1.5px);
+
     background-size: 12px 12px;
 
-    opacity: .12;
+    opacity: .16;
+
+    mask-image: radial-gradient(circle at bottom right,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,.9) 35%,
+        rgba(0,0,0,.5) 58%,
+        transparent 85%);
+
+    -webkit-mask-image: radial-gradient(circle at bottom right,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,.9) 35%,
+        rgba(0,0,0,.5) 58%,
+        transparent 85%);
+
     pointer-events: none;
 
     transition:
@@ -104,7 +119,7 @@
 }
 
 .library-card:hover::before {
-    opacity: .22;
+    opacity: .28;
     transform: scale(1.08);
 }
 
