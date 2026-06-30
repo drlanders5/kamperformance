@@ -14,9 +14,7 @@
     border-top: 4px solid var(--primary);
     border-radius: 20px;
     padding: 48px 42px;
-    box-shadow:
-        0 16px 40px rgba(10,16,32,.10),
-        0 8px 20px rgba(30,107,255,.05);
+    box-shadow: var(--shadow-soft);
     transition:
     transform var(--transition-medium),
     box-shadow var(--transition-medium),
@@ -25,9 +23,7 @@
 
 .evidence-card:hover {
     transform: translateY(-12px) scale(1.015);
-    box-shadow:
-        0 28px 65px rgba(10,16,32,.16),
-        0 10px 30px rgba(30,107,255,.10);
+    box-shadow: var(--shadow-lift);
 }
 
 .evidence-card h3 {
