@@ -4,9 +4,10 @@
     width: fit-content;
     background-color: var(--primary);
     color: var(--white);
-    padding: 14px 24px;
+    padding: 16px 30px;
     border-radius: 999px;
     font-weight: 700;
+    letter-spacing: .01em;
     text-decoration: none;
 }
 
