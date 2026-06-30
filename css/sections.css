@@ -570,61 +570,13 @@
    Article Sidebar Details
 ========================================== */
 
-.article-sidebar-card {
-    margin-bottom: 24px;
+.sidebar-mini-meta {
+    margin-bottom: 18px;
 
-    padding: 28px;
-
-    background: var(--white);
-    border: 1px solid #E8ECF4;
-    border-radius: 20px;
-
-    box-shadow: var(--shadow-soft);
-}
-
-.sidebar-category {
     color: var(--primary);
 
     font-size: .78rem;
     font-weight: 700;
     letter-spacing: .16em;
-    text-transform: uppercase;
-
-    margin-bottom: 14px;
-}
-
-.sidebar-title {
-    color: var(--navy);
-
-    font-size: 1.25rem;
-    line-height: 1.25;
-
-    margin-bottom: 20px;
-}
-
-.sidebar-meta {
-    display: grid;
-    gap: 8px;
-
-    color: var(--dark-gray);
-    font-size: .9rem;
-    line-height: 1.5;
-}
-
-.sidebar-badge {
-    margin-top: 24px;
-
-    display: inline-block;
-
-    padding: 10px 14px;
-
-    background: rgba(30,107,255,.10);
-    color: var(--primary);
-
-    border-radius: 999px;
-
-    font-size: .78rem;
-    font-weight: 700;
-    letter-spacing: .08em;
     text-transform: uppercase;
 }
