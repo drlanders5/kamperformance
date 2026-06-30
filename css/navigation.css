@@ -23,10 +23,32 @@
 }
 
 .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
     color: var(--white);
     font-size: 1.25rem;
     font-weight: 700;
     text-decoration: none;
+
+    transition: opacity var(--transition-medium);
+}
+
+.brand:hover {
+    opacity: .9;
+}
+
+.brand-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+
+    transition: transform var(--transition-medium);
+}
+
+.brand:hover .brand-logo {
+    transform: rotate(-6deg) scale(1.05);
 }
 
 .nav-links {
