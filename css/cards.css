@@ -56,7 +56,7 @@
 
     box-shadow:
         var(--shadow-soft),
-        0 8px 22px rgba(30,107,255,.05);
+        0 12px 30px rgba(30,107,255,.10);
 
     transition:
         transform var(--transition-medium),
@@ -67,7 +67,7 @@
     transform: translateY(-10px);
     box-shadow:
         var(--shadow-lift),
-        0 14px 34px rgba(30,107,255,.08);
+        0 18px 40px rgba(30,107,255,.14);
 }
 
 .library-category {
