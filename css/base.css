@@ -71,3 +71,22 @@ body {
 .evidence-cards .reveal:nth-child(3) {
     transition-delay: .95s;
 }
+
+/* ==========================================
+   Reading Progress Bar
+========================================== */
+
+.reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 0%;
+    height: 4px;
+
+    background: var(--primary);
+
+    z-index: 2000;
+
+    transition: width .1s linear;
+}
