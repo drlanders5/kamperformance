@@ -53,8 +53,13 @@
 }
 
 .library-preview {
-    background: #F6F8FC;
+    background: linear-gradient(180deg, #0A1020 0%, #0D1730 100%);
+    color: var(--white);
     padding: 150px 8%;
+}
+
+.library-preview .section-intro {
+    color: var(--light-gray);
 }
 
 .library-grid {
