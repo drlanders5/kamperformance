@@ -194,3 +194,58 @@ const updateActiveTocLink = () => {
 
 window.addEventListener("scroll", updateActiveTocLink);
 window.addEventListener("load", updateActiveTocLink);
+
+/* ==========================================
+   Automatic Related Guides
+========================================== */
+
+const relatedGuideContainer = document.querySelector(".related-guide-list");
+
+if (
+    relatedGuideContainer &&
+    guideArticle &&
+    typeof guides !== "undefined"
+) {
+    const currentGuideId = guideArticle.dataset.guideId;
+
+    const currentGuide = guides.find(
+        guide => guide.id === currentGuideId
+    );
+
+    if (currentGuide) {
+
+        const relatedGuides = guides
+            .filter(guide =>
+                guide.id !== currentGuide.id &&
+                guide.category === currentGuide.category &&
+                guide.status === "published"
+            )
+            .slice(0, 3);
+
+        if (relatedGuides.length === 0) {
+
+            relatedGuideContainer.innerHTML = `
+                <p>No related guides yet.</p>
+            `;
+
+        } else {
+
+            relatedGuideContainer.innerHTML = relatedGuides.map(guide => `
+                <a href="${guide.url}" class="guide-card">
+                    <p class="guide-topic">● ${guide.topic}</p>
+
+                    <h3>${guide.title}</h3>
+
+                    <p>${guide.summary}</p>
+
+                    <div class="guide-meta">
+                        <span>${guide.readTime} min read</span>
+                        <strong>Read Guide →</strong>
+                    </div>
+                </a>
+            `).join("");
+
+        }
+
+    }
+}
