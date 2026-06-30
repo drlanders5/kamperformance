@@ -39,7 +39,7 @@ window.addEventListener("load", updateHeaderOnScroll);
 const guideCountElements = document.querySelectorAll(".guide-count");
 
 if (guideCountElements.length && typeof getGuideCount === "function") {
-    guideCountElements.forEach(element => {
+    guideCountElements.forEach((element) => {
         const category = element.dataset.category;
         const count = getGuideCount(category);
 
@@ -55,10 +55,10 @@ if (guideCountElements.length && typeof getGuideCount === "function") {
 const guideLists = document.querySelectorAll(".guide-list");
 
 if (guideLists.length && typeof guides !== "undefined") {
-    guideLists.forEach(list => {
+    guideLists.forEach((list) => {
         const category = list.dataset.category;
 
-        const matchingGuides = guides.filter(guide =>
+        const matchingGuides = guides.filter((guide) =>
             guide.category === category &&
             guide.status === "published"
         );
@@ -72,18 +72,19 @@ if (guideLists.length && typeof guides !== "undefined") {
             return;
         }
 
-        list.innerHTML = matchingGuides.map(guide => `
-    <a href="${guide.url}" class="guide-card">
-        <p class="guide-topic">● ${guide.topic}</p>
+        list.innerHTML = matchingGuides.map((guide) => `
+            <a href="${guide.url}" class="guide-card">
+                <p class="guide-topic">● ${guide.topic}</p>
 
-        <h3>${guide.title}</h3>
+                <h3>${guide.title}</h3>
 
-        <p>${guide.summary}</p>
+                <p>${guide.summary}</p>
 
-        <div class="guide-meta">
-            <span>${guide.readTime} min read</span>
-            <strong>Read Guide →</strong>
-        </div>
-    </a>
-`).join("");
-});
+                <div class="guide-meta">
+                    <span>${guide.readTime} min read</span>
+                    <strong>Read Guide →</strong>
+                </div>
+            </a>
+        `).join("");
+    });
+}
