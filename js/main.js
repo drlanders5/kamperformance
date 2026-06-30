@@ -109,3 +109,24 @@ const updateReadingProgress = () => {
 
 window.addEventListener("scroll", updateReadingProgress);
 window.addEventListener("load", updateReadingProgress);
+
+/* ==========================================
+   Automatic Article Table of Contents
+========================================== */
+
+const tocList = document.querySelector("#article-toc-list");
+const articleHeadings = document.querySelectorAll(".article-content h2");
+
+if (tocList && articleHeadings.length) {
+    articleHeadings.forEach((heading, index) => {
+        const headingId = `section-${index + 1}`;
+
+        heading.id = headingId;
+
+        tocList.innerHTML += `
+            <li>
+                <a href="#${headingId}">${heading.textContent}</a>
+            </li>
+        `;
+    });
+}
