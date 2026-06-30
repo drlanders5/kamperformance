@@ -83,6 +83,8 @@
 }
 
 .highlight-card {
+    position: relative;
+    overflow: hidden;
     background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FD 100%);
     border-top: 5px solid var(--primary);
     border-radius: 22px;
@@ -111,4 +113,23 @@
 .highlight-card p {
     color: var(--dark-gray);
     line-height: 1.8;
+}
+
+.highlight-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    top: -110px;
+    right: -110px;
+
+    background: radial-gradient(
+        rgba(30,107,255,.12),
+        transparent 72%
+    );
+
+    pointer-events: none;
 }
