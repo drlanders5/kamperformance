@@ -46,7 +46,11 @@ window.addEventListener("load", updateHeaderOnScroll);
 
 const guideArticle = document.querySelector(".guide-article");
 
-const currentGuideId = guideArticle?.dataset.guideId;
+const urlParams = new URLSearchParams(window.location.search);
+
+const currentGuideId =
+    guideArticle?.dataset.guideId ||
+    urlParams.get("id");
 
 const currentGuide =
     typeof guides !== "undefined" && currentGuideId
