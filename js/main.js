@@ -73,11 +73,17 @@ if (guideLists.length && typeof guides !== "undefined") {
         }
 
         list.innerHTML = matchingGuides.map(guide => `
-            <a href="${guide.url}" class="guide-card">
-                <h3>${guide.title}</h3>
-                <p>${guide.summary}</p>
-                <span>${guide.difficulty} • ${guide.readTime} min read →</span>
-            </a>
-        `).join("");
-    });
+    <a href="${guide.url}" class="guide-card">
+        <p class="guide-topic">● ${guide.topic}</p>
+
+        <h3>${guide.title}</h3>
+
+        <p>${guide.summary}</p>
+
+        <div class="guide-meta">
+            <span>${guide.readTime} min read</span>
+            <strong>Read Guide →</strong>
+        </div>
+    </a>
+`).join("");
 }
