@@ -42,3 +42,20 @@ body {
     color: var(--dark-gray);
     line-height: 1.8;
 }
+
+/* ==========================================
+   Scroll Reveal Animation
+========================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
