@@ -78,6 +78,11 @@
     align-items: center;
 }
 
+.about-text {
+    max-width 760px:
+
+}
+
 .about-text h2 {
     font-size: clamp(2.2rem, 5vw, 3.5rem);
     line-height: 1.1;
