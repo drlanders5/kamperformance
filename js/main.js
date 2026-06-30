@@ -45,7 +45,6 @@ window.addEventListener("load", updateHeaderOnScroll);
 ========================================== */
 
 const guideArticle = document.querySelector(".guide-article");
-
 const urlParams = new URLSearchParams(window.location.search);
 
 const currentGuideId =
@@ -141,26 +140,17 @@ window.addEventListener("scroll", updateReadingProgress);
 window.addEventListener("load", updateReadingProgress);
 
 /* ==========================================
-   Dynamic Article Body
+   Article Table of Contents
 ========================================== */
 
-const articleContentContainer = document.querySelector("#article-content");
+const buildArticleToc = () => {
+    const tocList = document.querySelector("#article-toc-list");
+    const articleHeadings = document.querySelectorAll(".article-section");
 
-if (
-    articleContentContainer &&
-    typeof window.articleContent !== "undefined"
-) {
-    articleContentContainer.innerHTML = window.articleContent;
-}
+    if (!tocList || !articleHeadings.length) return;
 
-/* ==========================================
-   Automatic Article Table of Contents
-========================================== */
+    tocList.innerHTML = "";
 
-const tocList = document.querySelector("#article-toc-list");
-const articleHeadings = document.querySelectorAll(".article-section");
-
-if (tocList && articleHeadings.length) {
     articleHeadings.forEach((heading, index) => {
         const headingId = `section-${index + 1}`;
 
@@ -172,15 +162,12 @@ if (tocList && articleHeadings.length) {
             </li>
         `;
     });
-}
-
-/* ==========================================
-   Active Article Table of Contents
-========================================== */
-
-const tocLinks = document.querySelectorAll(".article-toc a");
+};
 
 const updateActiveTocLink = () => {
+    const tocLinks = document.querySelectorAll(".article-toc a");
+    const articleHeadings = document.querySelectorAll(".article-section");
+
     if (!tocLinks.length || !articleHeadings.length) return;
 
     let activeHeading = articleHeadings[0];
@@ -204,6 +191,34 @@ const updateActiveTocLink = () => {
 
 window.addEventListener("scroll", updateActiveTocLink);
 window.addEventListener("load", updateActiveTocLink);
+
+/* ==========================================
+   Dynamic Article Body
+========================================== */
+
+const articleContentContainer = document.querySelector("#article-content");
+
+const loadArticleContent = () => {
+    if (
+        articleContentContainer &&
+        typeof window.articleContent !== "undefined"
+    ) {
+        articleContentContainer.innerHTML = window.articleContent;
+
+        buildArticleToc();
+        updateActiveTocLink();
+        updateReadingProgress();
+    }
+};
+
+if (currentGuideId && guideArticle) {
+    const articleScript = document.createElement("script");
+
+    articleScript.src = `articles/${currentGuideId}.js`;
+    articleScript.onload = loadArticleContent;
+
+    document.body.appendChild(articleScript);
+}
 
 /* ==========================================
    Dynamic Previous / Next Guide Navigation
