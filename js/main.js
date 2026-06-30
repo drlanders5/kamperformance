@@ -88,3 +88,24 @@ if (guideLists.length && typeof guides !== "undefined") {
         `).join("");
     });
 }
+
+/* ==========================================
+   Reading Progress Bar
+========================================== */
+
+const readingProgress = document.querySelector(".reading-progress");
+
+const updateReadingProgress = () => {
+    if (!readingProgress) return;
+
+    const scrollTop = window.scrollY;
+    const documentHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+    const progress = (scrollTop / documentHeight) * 100;
+
+    readingProgress.style.width = `${progress}%`;
+};
+
+window.addEventListener("scroll", updateReadingProgress);
+window.addEventListener("load", updateReadingProgress);
