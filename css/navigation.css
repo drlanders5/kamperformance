@@ -58,13 +58,20 @@
 }
 
 .nav-links a {
-    color: var(--white);
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
 
     transition:
         color var(--transition-fast);
+}
+
+.nav-links li:nth-child(odd) a {
+    color: var(--white);
+}
+
+.nav-links li:nth-child(even) a {
+    color: var(--light-gray);
 }
 
 .nav-links a:hover {
