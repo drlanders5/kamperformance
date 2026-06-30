@@ -393,32 +393,42 @@
 
     border-top: 1px solid #E8ECF4;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 24px;
 }
 
 .guide-nav-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+    padding: 28px;
+
+    background: #F8FAFD;
+    border: 1px solid #E8ECF4;
+    border-radius: 18px;
 
     color: var(--navy);
     text-decoration: none;
     font-weight: 700;
+    line-height: 1.4;
 
     transition:
         color var(--transition-fast),
-        transform var(--transition-medium);
+        transform var(--transition-medium),
+        border-color var(--transition-medium),
+        box-shadow var(--transition-medium);
 }
 
 .guide-nav-link:hover {
     color: var(--primary);
+    border-color: rgba(30,107,255,.18);
+    box-shadow: var(--shadow-soft);
 }
 
-.guide-nav-link:first-child:hover {
+.guide-nav-prev:hover {
     transform: translateX(-6px);
+}
+
+.guide-nav-next {
+    text-align: right;
 }
 
 .guide-nav-next:hover {
