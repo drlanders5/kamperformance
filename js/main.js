@@ -16,3 +16,16 @@ const observer = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((element) => {
     observer.observe(element);
 });
+
+const siteHeader = document.querySelector(".site-header");
+
+const updateHeaderOnScroll = () => {
+    if (window.scrollY > 80) {
+        siteHeader.classList.add("scrolled");
+    } else {
+        siteHeader.classList.remove("scrolled");
+    }
+};
+
+window.addEventListener("scroll", updateHeaderOnScroll);
+window.addEventListener("load", updateHeaderOnScroll);
