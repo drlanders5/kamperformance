@@ -30,7 +30,7 @@ const guides = [
         published: "2026-01-01",
         updated: "2026-01-01",
 
-        url: "movement-education-foundations.html"
+        url: "article.html?id=movement-education-foundations"
     },
    
     {
