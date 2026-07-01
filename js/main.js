@@ -482,12 +482,12 @@ if (currentGuide) {
     }
 
     document.title = `${currentGuide.title} | KamPerformance`;
-}
 
-if (metaDescription) {
+   if (metaDescription) {
     metaDescription.setAttribute("content", currentGuide.summary);
+   }
 }
-
+   
 /* ==========================================
    Active Navigation Link
 ========================================== */
