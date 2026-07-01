@@ -143,9 +143,6 @@ body {
     background: var(--primary);
     color: var(--white);
 
-    font-size: 1.5rem;
-    font-weight: 700;
-
     cursor: pointer;
 
     box-shadow:
@@ -161,6 +158,11 @@ body {
         transform var(--transition-medium),
         visibility var(--transition-medium),
         box-shadow var(--transition-medium);
+}
+
+.scroll-top svg {
+    width: 26px;
+    height: 26px;
 }
 
 .scroll-top.visible {
