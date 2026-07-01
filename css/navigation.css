@@ -79,6 +79,27 @@
    Mobile Navigation
 ========================================== */
 
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(5,10,22,.55);
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 900;
+
+    transition:
+        opacity var(--transition-medium),
+        visibility var(--transition-medium);
+}
+
+.nav-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
 .nav-toggle {
     display: none;
 
