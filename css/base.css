@@ -89,6 +89,19 @@ body {
     transform: translateY(0);
 }
 
+.hero-divider {
+    transform: scaleX(.4);
+    transform-origin: center;
+
+    transition:
+        transform .8s ease;
+}
+
+.reveal.active .hero-divider,
+.page-hero .hero-divider {
+    transform: scaleX(1);
+}
+
 .evidence-cards .reveal:nth-child(1) {
     transition-delay: .25s;
 }
