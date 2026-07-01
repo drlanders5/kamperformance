@@ -115,7 +115,7 @@ const guides = [
         published: "2026-01-01",
         updated: "2026-01-01",
 
-        url: "#"
+        url: "article.html?id=training-smarter"
     }
 
 ];
