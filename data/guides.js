@@ -4,7 +4,7 @@
 
 const guides = [
 
-       {
+    {
         id: "movement-education-foundations",
         title: "Movement Education Foundations",
         category: "foundations",
@@ -32,7 +32,7 @@ const guides = [
 
         url: "article.html?id=movement-education-foundations"
     },
-   
+
     {
         id: "understanding-pain",
         title: "Understanding Pain",
@@ -181,15 +181,15 @@ const guideCategories = [
    ================================================ */
 
 function getGuidesByCategory(category) {
-    return guides.filter(guide => guide.category === category);
+    return guides.filter((guide) => guide.category === category);
 }
 
 function getFeaturedGuides() {
-    return guides.filter(guide => guide.featured);
+    return guides.filter((guide) => guide.featured);
 }
 
 function getPublishedGuides() {
-    return guides.filter(guide => guide.status === "published");
+    return guides.filter((guide) => guide.status === "published");
 }
 
 function getGuideCount(category) {
