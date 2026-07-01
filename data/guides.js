@@ -130,8 +130,14 @@ const guideCategories = [
         id: "foundations",
         title: "Foundations",
 
+        cardTitle:
+            "Movement Science Basics",
+
         heroTitle:
             "Build the base for better movement.",
+
+        cardDescription:
+            "Learn the core concepts behind pain science, biomechanics, recovery, load management, and movement education.",
 
         description:
             "Learn the core concepts behind pain science, biomechanics, recovery, load management, and movement education.",
@@ -151,8 +157,14 @@ const guideCategories = [
         id: "pain",
         title: "Pain",
 
+        cardTitle:
+            "Understand Pain Better",
+
         heroTitle:
             "Understand pain with more clarity.",
+
+        cardDescription:
+            "Explore evidence-based guides on pain science, injury, recovery, and the role movement can play in feeling better.",
 
         description:
             "Explore evidence-based guides on pain science, injury, recovery, and the role movement can play in feeling better.",
@@ -172,8 +184,14 @@ const guideCategories = [
         id: "mobility",
         title: "Mobility",
 
+        cardTitle:
+            "Move With More Control",
+
         heroTitle:
             "Move with more freedom and control.",
+
+        cardDescription:
+            "Learn how mobility, flexibility, joint motion, and movement quality work together to improve performance and everyday movement.",
 
         description:
             "Learn how mobility, flexibility, joint motion, and movement quality work together to improve performance and everyday movement.",
@@ -193,8 +211,14 @@ const guideCategories = [
         id: "performance",
         title: "Performance",
 
+        cardTitle:
+            "Train Smarter",
+
         heroTitle:
             "Train smarter with better principles.",
+
+        cardDescription:
+            "Learn how strength, power, conditioning, recovery, and training decisions connect to better performance.",
 
         description:
             "Learn how strength, power, conditioning, recovery, and training decisions connect to better performance.",
@@ -214,8 +238,14 @@ const guideCategories = [
         id: "exercises",
         title: "Exercises",
 
+        cardTitle:
+            "Exercise Library",
+
         heroTitle:
             "Master movement through better exercise.",
+
+        cardDescription:
+            "Explore exercise technique, regressions, progressions, and movement demonstrations designed to improve confidence and performance.",
 
         description:
             "Explore exercise technique, regressions, progressions, and movement demonstrations designed to improve confidence and performance.",
@@ -235,8 +265,14 @@ const guideCategories = [
         id: "research",
         title: "Research Reviews",
 
+        cardTitle:
+            "Evidence Made Practical",
+
         heroTitle:
             "Turn research into practical movement knowledge.",
+
+        cardDescription:
+            "Read evidence summaries, myth breakdowns, and clinical research reviews translated into practical movement education.",
 
         description:
             "Read evidence summaries, myth breakdowns, and clinical research reviews translated into practical movement education.",
