@@ -178,8 +178,8 @@
 
 .footer-links {
     display: grid;
-    grid-template-columns: repeat(2, 220px);
-    gap: 80px;
+    grid-template-columns: repeat(3, 220px);
+    gap: 70px;
 
     margin-bottom: 56px;
 }
