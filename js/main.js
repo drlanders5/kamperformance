@@ -158,10 +158,10 @@ if (currentCategory) {
     }
 
     document.title = `${currentCategory.title} | KamPerformance`;
-}
 
-if (metaDescription) {
-    metaDescription.setAttribute("content", currentCategory.description);
+    if (metaDescription) {
+        metaDescription.setAttribute("content", currentCategory.description);
+    }
 }
 
 /* ==========================================
