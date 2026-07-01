@@ -502,3 +502,31 @@ navLinkElements.forEach((link) => {
         }
     }
 });
+
+/* ==========================================
+   Scroll To Top Button
+========================================== */
+
+const scrollTopButton = document.querySelector(".scroll-top");
+
+if (scrollTopButton) {
+
+    const updateScrollTopButton = () => {
+        if (window.scrollY > 500) {
+            scrollTopButton.classList.add("visible");
+        } else {
+            scrollTopButton.classList.remove("visible");
+        }
+    };
+
+    window.addEventListener("scroll", updateScrollTopButton);
+    window.addEventListener("load", updateScrollTopButton);
+
+    scrollTopButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+}
