@@ -119,6 +119,39 @@ if (currentCategory) {
 }
 
 /* ==========================================
+   Dynamic Library Category Cards
+========================================== */
+
+const libraryCategoryContainer = document.querySelector("[data-library-categories]");
+
+if (
+    libraryCategoryContainer &&
+    typeof guideCategories !== "undefined"
+) {
+    libraryCategoryContainer.innerHTML = guideCategories.map((category) => {
+        const count = getGuideCount(category.id);
+
+        return `
+            <a href="${category.url}" class="knowledge-card">
+                <p class="library-category">${category.title}</p>
+
+                <h2>${category.cardTitle}</h2>
+
+                <p>
+                    ${category.cardDescription}
+                </p>
+
+                <p class="guide-count" data-category="${category.id}">
+                    ${count} ${count === 1 ? "Guide" : "Guides"} Available
+                </p>
+
+                <span>Explore Guides →</span>
+            </a>
+        `;
+    }).join("");
+}
+
+/* ==========================================
    Guide Counter
 ========================================== */
 
