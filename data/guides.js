@@ -130,48 +130,126 @@ const guideCategories = [
         id: "foundations",
         title: "Foundations",
 
+        heroTitle:
+            "Build the base for better movement.",
+
         description:
-            "Build your understanding of pain science, biomechanics, motor learning, recovery, and movement fundamentals."
+            "Learn the core concepts behind pain science, biomechanics, recovery, load management, and movement education.",
+
+        topics: [
+            "Pain Science",
+            "Biomechanics",
+            "Motor Learning",
+            "Recovery",
+            "Load Management"
+        ],
+
+        url: "category.html?id=foundations"
     },
 
     {
         id: "pain",
         title: "Pain",
 
+        heroTitle:
+            "Understand pain with more clarity.",
+
         description:
-            "Evidence-based education about pain, injury, and movement."
+            "Explore evidence-based guides on pain science, injury, recovery, and the role movement can play in feeling better.",
+
+        topics: [
+            "Pain Science",
+            "Neck Pain",
+            "Low Back Pain",
+            "Shoulder Pain",
+            "Knee Pain"
+        ],
+
+        url: "category.html?id=pain"
     },
 
     {
         id: "mobility",
         title: "Mobility",
 
+        heroTitle:
+            "Move with more freedom and control.",
+
         description:
-            "Improve movement quality, control, and mobility through practical education."
+            "Learn how mobility, flexibility, joint motion, and movement quality work together to improve performance and everyday movement.",
+
+        topics: [
+            "Mobility",
+            "Flexibility",
+            "Joint Motion",
+            "Movement Quality",
+            "Warm-Ups"
+        ],
+
+        url: "category.html?id=mobility"
     },
 
     {
         id: "performance",
         title: "Performance",
 
+        heroTitle:
+            "Train smarter with better principles.",
+
         description:
-            "Train smarter with research-backed performance principles."
+            "Learn how strength, power, conditioning, recovery, and training decisions connect to better performance.",
+
+        topics: [
+            "Strength",
+            "Power",
+            "Running",
+            "Recovery",
+            "Training Principles"
+        ],
+
+        url: "category.html?id=performance"
     },
 
     {
         id: "exercises",
         title: "Exercises",
 
+        heroTitle:
+            "Master movement through better exercise.",
+
         description:
-            "Exercise technique, regressions, progressions, and movement demonstrations."
+            "Explore exercise technique, regressions, progressions, and movement demonstrations designed to improve confidence and performance.",
+
+        topics: [
+            "Exercise Technique",
+            "Progressions",
+            "Regressions",
+            "Movement Patterns",
+            "Programming"
+        ],
+
+        url: "category.html?id=exercises"
     },
 
     {
         id: "research",
         title: "Research Reviews",
 
+        heroTitle:
+            "Turn research into practical movement knowledge.",
+
         description:
-            "Research summaries, myth busting, and evidence updates."
+            "Read evidence summaries, myth breakdowns, and clinical research reviews translated into practical movement education.",
+
+        topics: [
+            "Research Reviews",
+            "Clinical Updates",
+            "Myth Busting",
+            "Evidence Summaries",
+            "Practice Applications"
+        ],
+
+        url: "category.html?id=research"
     }
 
 ];
