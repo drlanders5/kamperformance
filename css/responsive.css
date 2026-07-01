@@ -96,6 +96,28 @@
         gap: 60px;
     }
 
+/* ==========================================
+   Contact Page
+========================================== */
+
+.contact-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+}
+
+.contact-main,
+.contact-card {
+    padding: 34px 28px;
+}
+
+.faq-grid {
+    grid-template-columns: 1fr;
+}
+
+.faq-section .section-header {
+    margin-bottom: 50px;
+}
+    
     .page-hero,
     .category-overview,
     .library-categories,
