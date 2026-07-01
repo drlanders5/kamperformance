@@ -1,14 +1,19 @@
 @media (max-width: 900px) {
     .navbar {
-        flex-direction: column;
-        gap: 24px;
-    }
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 18px;
-    }
+.brand {
+    flex: 1;
+}
+
+.nav-links {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0;
+}
 
     .hero h1 {
         font-size: clamp(3rem, 12vw, 5rem);
