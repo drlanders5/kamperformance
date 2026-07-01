@@ -61,6 +61,15 @@ const currentGuideIndex =
         ? guides.findIndex((guide) => guide.id === currentGuideId)
         : -1;
 
+const categoryPageMap = {
+    foundations: "foundations.html",
+    pain: "#",
+    mobility: "#",
+    performance: "#",
+    exercises: "#",
+    research: "#"
+};
+
 /* ==========================================
    Guide Counter
 ========================================== */
@@ -131,7 +140,9 @@ const updateReadingProgress = () => {
     const documentHeight =
         document.documentElement.scrollHeight - window.innerHeight;
 
-    const progress = (scrollTop / documentHeight) * 100;
+    const progress = documentHeight > 0
+        ? (scrollTop / documentHeight) * 100
+        : 0;
 
     readingProgress.style.width = `${progress}%`;
 };
@@ -158,7 +169,7 @@ const buildArticleToc = () => {
 
         tocList.innerHTML += `
             <li>
-                <a href="#${headingId}">${heading.textContent}</a>
+                <a href="#${headingId}">${heading.textContent.trim()}</a>
             </li>
         `;
     });
@@ -236,6 +247,14 @@ if (currentGuide && currentGuideIndex !== -1 && typeof guides !== "undefined") {
         previousLink.textContent = `← ${previousGuide.title}`;
     }
 
+    if (previousLink && !previousGuide) {
+        previousLink.href =
+            categoryPageMap[currentGuide.category] || "library.html";
+
+        previousLink.textContent =
+            `← Back to ${currentGuide.category.charAt(0).toUpperCase() + currentGuide.category.slice(1)}`;
+    }
+
     if (nextLink && nextGuide) {
         nextLink.href = nextGuide.url;
         nextLink.textContent = `${nextGuide.title} →`;
@@ -290,10 +309,16 @@ if (relatedGuideContainer && currentGuide && typeof guides !== "undefined") {
 const guideMetaElement = document.querySelector("[data-guide-meta]");
 const readTimeElement = document.querySelector("[data-read-time]");
 const updatedDateElement = document.querySelector("[data-updated-date]");
-const guideTitleElement = document.querySelector("[data-guide-title]");
+const guideTitleElements = document.querySelectorAll("[data-guide-title]");
 const guideSummaryElement = document.querySelector("[data-guide-summary]");
+const guideCategoryElement = document.querySelector("[data-guide-category]");
+const guideCategoryLink = document.querySelector("[data-guide-category-link]");
 
 if (currentGuide) {
+    const categoryLabel =
+        currentGuide.category.charAt(0).toUpperCase() +
+        currentGuide.category.slice(1);
+
     if (guideMetaElement) {
         guideMetaElement.textContent =
             `${currentGuide.category.toUpperCase()} • ${currentGuide.readTime} MIN READ`;
@@ -311,11 +336,23 @@ if (currentGuide) {
             });
     }
 
-    if (guideTitleElement) {
-        guideTitleElement.textContent = currentGuide.title;
-    }
+    guideTitleElements.forEach((element) => {
+        element.textContent = currentGuide.title;
+    });
 
     if (guideSummaryElement) {
         guideSummaryElement.textContent = currentGuide.summary;
     }
+
+    if (guideCategoryElement) {
+        guideCategoryElement.textContent = currentGuide.category.toUpperCase();
+    }
+
+    if (guideCategoryLink) {
+        guideCategoryLink.textContent = categoryLabel;
+        guideCategoryLink.href =
+            categoryPageMap[currentGuide.category] || "library.html";
+    }
+
+    document.title = `${currentGuide.title} | KamPerformance`;
 }
