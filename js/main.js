@@ -159,6 +159,12 @@ if (currentCategory) {
     document.title = `${currentCategory.title} | KamPerformance`;
 }
 
+const metaDescription = document.querySelector("meta[name='description']");
+
+if (metaDescription) {
+    metaDescription.setAttribute("content", currentCategory.description);
+}
+
 /* ==========================================
    Dynamic Library Category Cards
 ========================================== */
@@ -477,6 +483,12 @@ if (currentGuide) {
     }
 
     document.title = `${currentGuide.title} | KamPerformance`;
+}
+
+const metaDescription = document.querySelector("meta[name='description']");
+
+if (metaDescription) {
+    metaDescription.setAttribute("content", currentGuide.summary);
 }
 
 /* ==========================================
