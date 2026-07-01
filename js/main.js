@@ -27,6 +27,19 @@ document.querySelectorAll(".reveal").forEach((element) => {
 
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
+const navOverlay = document.querySelector(".nav-overlay");
+
+const closeMobileNav = () => {
+    if (!navToggle || !navLinks) return;
+
+    navLinks.classList.remove("open");
+    navToggle.classList.remove("active");
+    navToggle.setAttribute("aria-expanded", "false");
+
+    if (navOverlay) {
+        navOverlay.classList.remove("open");
+    }
+};
 
 if (navToggle && navLinks) {
     navToggle.addEventListener("click", () => {
@@ -34,15 +47,19 @@ if (navToggle && navLinks) {
 
         navToggle.classList.toggle("active", isOpen);
         navToggle.setAttribute("aria-expanded", isOpen);
+
+        if (navOverlay) {
+            navOverlay.classList.toggle("open", isOpen);
+        }
     });
 
     navLinks.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-            navLinks.classList.remove("open");
-            navToggle.classList.remove("active");
-            navToggle.setAttribute("aria-expanded", "false");
-        });
+        link.addEventListener("click", closeMobileNav);
     });
+
+    if (navOverlay) {
+        navOverlay.addEventListener("click", closeMobileNav);
+    }
 }
 
 /* ==========================================
