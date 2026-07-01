@@ -41,7 +41,7 @@ window.addEventListener("scroll", updateHeaderOnScroll);
 window.addEventListener("load", updateHeaderOnScroll);
 
 /* ==========================================
-   Current Guide Lookup
+   URL / Guide / Category Lookup
 ========================================== */
 
 const guideArticle = document.querySelector(".guide-article");
@@ -61,14 +61,62 @@ const currentGuideIndex =
         ? guides.findIndex((guide) => guide.id === currentGuideId)
         : -1;
 
+const currentCategoryId = urlParams.get("id");
+
+const currentCategory =
+    typeof guideCategories !== "undefined" && currentCategoryId
+        ? guideCategories.find((category) => category.id === currentCategoryId)
+        : null;
+
 const categoryPageMap = {
-    foundations: "foundations.html",
-    pain: "#",
-    mobility: "#",
-    performance: "#",
-    exercises: "#",
-    research: "#"
+    foundations: "category.html?id=foundations",
+    pain: "category.html?id=pain",
+    mobility: "category.html?id=mobility",
+    performance: "category.html?id=performance",
+    exercises: "category.html?id=exercises",
+    research: "category.html?id=research"
 };
+
+/* ==========================================
+   Dynamic Category Page
+========================================== */
+
+const categoryEyebrowElement = document.querySelector("[data-category-eyebrow]");
+const categoryTitleElement = document.querySelector("[data-category-title]");
+const categoryDescriptionElement = document.querySelector("[data-category-description]");
+const categoryTopicsElement = document.querySelector("[data-category-topics]");
+const categoryGuideHeadingElement = document.querySelector("[data-category-guide-heading]");
+const categoryGuideList = document.querySelector(".guide-list[data-category='']");
+
+if (currentCategory) {
+    if (categoryEyebrowElement) {
+        categoryEyebrowElement.textContent = currentCategory.title.toUpperCase();
+    }
+
+    if (categoryTitleElement) {
+        categoryTitleElement.textContent = currentCategory.heroTitle;
+    }
+
+    if (categoryDescriptionElement) {
+        categoryDescriptionElement.textContent = currentCategory.description;
+    }
+
+    if (categoryTopicsElement) {
+        categoryTopicsElement.innerHTML = currentCategory.topics
+            .map((topic) => `<li>${topic}</li>`)
+            .join("");
+    }
+
+    if (categoryGuideHeadingElement) {
+        categoryGuideHeadingElement.textContent = `${currentCategory.title} Guides`;
+    }
+
+    if (categoryGuideList) {
+        categoryGuideList.dataset.category = currentCategory.id;
+    }
+
+    document.title = `${currentCategory.title} | KamPerformance`;
+}
 
 /* ==========================================
    Guide Counter
