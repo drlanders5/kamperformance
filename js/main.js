@@ -87,6 +87,7 @@ window.addEventListener("load", updateHeaderOnScroll);
 
 const guideArticle = document.querySelector(".guide-article");
 const urlParams = new URLSearchParams(window.location.search);
+const metaDescription = document.querySelector("meta[name='description']");
 
 const currentGuideId =
     guideArticle?.dataset.guideId ||
@@ -157,6 +158,10 @@ if (currentCategory) {
     }
 
     document.title = `${currentCategory.title} | KamPerformance`;
+}
+
+if (metaDescription) {
+    metaDescription.setAttribute("content", currentCategory.description);
 }
 
 /* ==========================================
@@ -477,6 +482,10 @@ if (currentGuide) {
     }
 
     document.title = `${currentGuide.title} | KamPerformance`;
+}
+
+if (metaDescription) {
+    metaDescription.setAttribute("content", currentGuide.summary);
 }
 
 /* ==========================================
