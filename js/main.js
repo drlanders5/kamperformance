@@ -478,3 +478,27 @@ if (currentGuide) {
 
     document.title = `${currentGuide.title} | KamPerformance`;
 }
+
+/* ==========================================
+   Active Navigation Link
+========================================== */
+
+const currentPath = window.location.pathname.split("/").pop() || "index.html";
+const navLinkElements = document.querySelectorAll(".nav-links a");
+
+navLinkElements.forEach((link) => {
+    const linkPath = link.getAttribute("href");
+
+    if (linkPath === currentPath) {
+        link.classList.add("active");
+    }
+
+    if (
+        currentPath === "category.html" ||
+        currentPath === "article.html"
+    ) {
+        if (linkPath === "library.html") {
+            link.classList.add("active");
+        }
+    }
+});
