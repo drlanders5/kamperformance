@@ -101,6 +101,19 @@
         gap: 60px;
     }
 
+    .footer-links {
+    grid-template-columns: 1fr;
+    gap: 42px;
+}
+
+.footer-brand {
+    margin-bottom: 42px;
+}
+
+.site-footer {
+    padding: 70px 6% 45px;
+}
+
 /* ==========================================
    Contact Page
 ========================================== */
